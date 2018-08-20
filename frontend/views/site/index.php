@@ -20,7 +20,7 @@
                             </span>
                         <h3><?php echo $item['name']; ?></h3>
                         <p><?php echo $item['content']; ?></p>
-                        <p><a href="#">Learn more</a></p>
+<!--                        <p><a href="#">Learn more</a></p>-->
                     </div>
                 </div>
 

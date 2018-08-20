@@ -24,9 +24,7 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
-
 </head>
 <body>
 <?php $this->beginBody() ?>

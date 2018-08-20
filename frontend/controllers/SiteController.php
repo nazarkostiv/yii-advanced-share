@@ -74,7 +74,10 @@ class SiteController extends Controller
     public function actionIndex()
     {
 
-        $serviceModel = Service::find()->asArray()->all();
+        $serviceModel = Service::find()
+            ->asArray()
+            ->limit(6)
+            ->all();
 
 
         return $this->render('index', [
@@ -94,8 +97,16 @@ class SiteController extends Controller
      * @return string
      */
     public function actionService()
+
     {
-        return $this->render('service');
+        $serviceModel = Service::find()
+            ->asArray()
+            ->limit(6)
+            ->all();
+
+        return $this->render('service', [
+            'service' => $serviceModel,
+        ]);
     }
 
     /**
