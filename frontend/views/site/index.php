@@ -10,67 +10,21 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 col-sm-4 ">
-                <div class="feature-center animate-box" data-animate-effect="fadeInUp">
-						<span class="icon">
-							<i class="icon-eye"></i>
-						</span>
-                    <h3>Retina Ready</h3>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p><a href="#">Learn more</a></p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-4 ">
-                <div class="feature-center animate-box" data-animate-effect="fadeInUp">
-						<span class="icon">
-							<i class="icon-command"></i>
-						</span>
-                    <h3>Fully Responsive</h3>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p><a href="#">Learn more</a></p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-4 ">
-                <div class="feature-center animate-box" data-animate-effect="fadeInUp">
-						<span class="icon">
-							<i class="icon-power"></i>
-						</span>
-                    <h3>Web Starter</h3>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p><a href="#">Learn more</a></p>
-                </div>
-            </div>
 
-            <div class="col-md-4 col-sm-4 ">
-                <div class="feature-center animate-box" data-animate-effect="fadeInUp">
-						<span class="icon">
-							<i class="icon-eye"></i>
-						</span>
-                    <h3>Retina Ready</h3>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p><a href="#">Learn more</a></p>
+            <?php foreach ( $service as $item ) : ?>
+
+                <div class="col-md-4 col-sm-4 ">
+                    <div class="feature-center animate-box" data-animate-effect="fadeInUp">
+                            <span class="icon">
+                                <i class="<?php echo $item['icon']; ?>"></i>
+                            </span>
+                        <h3><?php echo $item['name']; ?></h3>
+                        <p><?php echo $item['content']; ?></p>
+                        <p><a href="#">Learn more</a></p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4 col-sm-4 ">
-                <div class="feature-center animate-box" data-animate-effect="fadeInUp">
-						<span class="icon">
-							<i class="icon-command"></i>
-						</span>
-                    <h3>Fully Responsive</h3>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p><a href="#">Learn more</a></p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-4 ">
-                <div class="feature-center animate-box" data-animate-effect="fadeInUp">
-						<span class="icon">
-							<i class="icon-power"></i>
-						</span>
-                    <h3>Web Starter</h3>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p><a href="#">Learn more</a></p>
-                </div>
-            </div>
+
+            <?php endforeach; ?>
 
         </div>
     </div>
