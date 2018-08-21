@@ -13,10 +13,11 @@ use yii\web\Controller;
 
 class BasicController extends Controller
 {
-    public $layout = 'basic';
+//    public $layout = 'basic';
 
     public function actionIndex()
     {
+        $this->layout = 'basic';
         return $this->render('index');
     }
 }
