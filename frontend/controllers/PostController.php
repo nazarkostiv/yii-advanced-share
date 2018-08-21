@@ -8,8 +8,9 @@
 
 namespace frontend\controllers;
 
+use Yii;
 use yii\web\Controller;
-use frontend\models\AddPostForm;
+use frontend\models\Service;
 
 class PostController extends Controller
 {
@@ -17,9 +18,13 @@ class PostController extends Controller
     public function actionIndex()
     {
 
-        $model = new AddPostForm();
+        $model = new Service();
 
-        return $this->render('index', compact('model'));
+        if( $model->load( Yii::$app->request->post() ) and $model->validate() ) {
+            return $this->refresh();
+        }
+
+        return $this->render( 'index', compact( 'model' ) );
 
     }
 
