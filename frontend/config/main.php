@@ -47,6 +47,7 @@ return [
                 '/about' => 'site/about',
                 '/blog' => 'site/blog',
                 '/contact' => 'site/contact',
+                '/post' => 'post/index',
 //                '/test/<var:\w+>' => 'test/index',
 //                '/test/<varFirst:\w+>/<varSecond:\w+>' => 'test/index',
             ],
