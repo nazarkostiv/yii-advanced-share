@@ -1,26 +1,26 @@
 <?php
 
-namespace frontend\models;
+namespace backend\models;
 
 use Yii;
-use \yii\db\ActiveRecord;
 
 /**
- * This is the model class for table "service".
+ * This is the model class for table "post".
  *
  * @property int $id
- * @property string $name
+ * @property string $title
  * @property string $content
- * @property string $icon
+ * @property string $date
+ * @property int $author
  */
-class Service extends ActiveRecord
+class Post extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'service';
+        return 'post';
     }
 
     /**
@@ -29,9 +29,11 @@ class Service extends ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'content', 'icon'], 'required'],
+            [['title', 'content', 'date', 'author'], 'required'],
             [['content'], 'string'],
-            [['name', 'icon'], 'string', 'max' => 255],
+            [['date'], 'safe'],
+            [['author'], 'integer'],
+            [['title'], 'string', 'max' => 255],
         ];
     }
 
@@ -42,9 +44,10 @@ class Service extends ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
+            'title' => 'Title',
             'content' => 'Content',
-            'icon' => 'Icon',
+            'date' => 'Date',
+            'author' => 'Author',
         ];
     }
 }

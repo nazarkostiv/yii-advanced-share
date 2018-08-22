@@ -7,6 +7,8 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
 
+use backend\models\Post;
+
 /**
  * Site controller
  */
@@ -26,7 +28,7 @@ class SiteController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout', 'index', 'addpost'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -96,5 +98,22 @@ class SiteController extends Controller
         Yii::$app->user->logout();
 
         return $this->goHome();
+    }
+
+    public function actionAddpost()
+    {
+        $model = new Post();
+
+        $model->date = date('Y-m-d');
+        $model->author = Yii::$app->user->identity->id;
+
+        if( $model->load( Yii::$app->request->post() ) and $model->validate() ) {
+            if( $model->save() ) {
+                return $this->refresh();
+            }
+        }
+
+        return $this->render( 'add-post', compact( 'model' ) );
+
     }
 }
