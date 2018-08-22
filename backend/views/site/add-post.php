@@ -12,9 +12,9 @@ use yii\helpers\Html;
 
             $form = ActiveForm::begin();
 
-            echo $form->field($model, 'name')->textInput(['autofocus' => true]);
+            echo $form->field($model, 'title')->textInput(['autofocus' => true]);
             echo $form->field($model, 'content')->textarea(['rows' => 5]);
-            echo $form->field($model, 'icon');
+//            echo $form->field($model, 'date');
 
             echo Html::submitButton('Send', ['class' => 'btn btn-success']);
 
