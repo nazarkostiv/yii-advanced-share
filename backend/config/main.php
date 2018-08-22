@@ -41,7 +41,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                '/add-post' => 'site/addpost'
+                '<action:\w+>' => 'site/<action>',
             ],
         ],
     ],

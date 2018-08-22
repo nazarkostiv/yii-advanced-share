@@ -10,6 +10,10 @@ use yii\helpers\Html;
 
             <?php
 
+            echo date('Y-m-d');
+            echo ' ';
+            echo Yii::$app->user->identity->username;
+
             $form = ActiveForm::begin();
 
             echo $form->field($model, 'title')->textInput(['autofocus' => true]);
