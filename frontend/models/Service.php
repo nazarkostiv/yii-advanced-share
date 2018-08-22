@@ -3,6 +3,7 @@
 namespace frontend\models;
 
 use Yii;
+use \yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "service".
@@ -12,7 +13,7 @@ use Yii;
  * @property string $content
  * @property string $icon
  */
-class Service extends \yii\db\ActiveRecord
+class Service extends ActiveRecord
 {
     /**
      * {@inheritdoc}

@@ -21,7 +21,9 @@ class PostController extends Controller
         $model = new Service();
 
         if( $model->load( Yii::$app->request->post() ) and $model->validate() ) {
-            return $this->refresh();
+            if( $model->save() ) {
+                return $this->refresh();
+            }
         }
 
         return $this->render( 'index', compact( 'model' ) );
