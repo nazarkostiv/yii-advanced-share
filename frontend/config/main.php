@@ -11,7 +11,7 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
-//    'layout' => 'testLayout',
+//    'layout' => 'custom layout',
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
@@ -41,12 +41,9 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                '/' => 'site/index',
-                '/service' => 'site/service',
-                '/work' => 'site/work',
-                '/about' => 'site/about',
-                '/blog' => 'site/blog',
-                '/contact' => 'site/contact',
+                '<action:\w+>' => 'site/<action>',
+//                '/' => 'site/index',
+//                '/service' => 'site/service',
 //                '/test/<var:\w+>' => 'test/index',
 //                '/test/<varFirst:\w+>/<varSecond:\w+>' => 'test/index',
             ],

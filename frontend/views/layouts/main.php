@@ -24,9 +24,7 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
-
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -44,12 +42,12 @@ AppAsset::register($this);
 
                     <?php
                     $menuItems = [
-                        ['label' => 'Home', 'url' => ['/site/index']],
-                        ['label' => 'Service', 'url' => ['/site/service']],
-                        ['label' => 'Work', 'url' => ['/site/work']],
-                        ['label' => 'About', 'url' => ['/site/about']],
-                        ['label' => 'Blog', 'url' => ['/site/blog']],
-                        ['label' => 'Contact', 'url' => ['/site/contact']],
+                        ['label' => 'Home', 'url' => ['/']],
+                        ['label' => 'Service', 'url' => ['/service']],
+                        ['label' => 'Work', 'url' => ['/work']],
+                        ['label' => 'About', 'url' => ['/about']],
+                        ['label' => 'Blog', 'url' => ['/blog']],
+                        ['label' => 'Contact', 'url' => ['/contact']],
                     ];
                     echo Menu::widget([
                         'options' => [],
@@ -75,7 +73,7 @@ AppAsset::register($this);
                 <div class="col-md-4 fh5co-widget ">
                     <h3><?php echo MainWidget::widget(['slug' => 'site_name']); ?>.</h3>
                     <p><?php echo MainWidget::widget(['slug' => 'site_desc']); ?></p>
-                    <p><a href="<?php echo Url::toRoute('site/service'); ?>">Learn More</a></p>
+                    <p><a href="<?php echo Url::toRoute('service'); ?>">Learn More</a></p>
                 </div>
                 <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 ">
 

@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use frontend\models\Service;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -72,7 +73,17 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $serviceModel = Service::find()
+            ->asArray()
+            ->limit(6)
+            ->all();
+
+        /** Page Title */
+        $this->view->title = 'Home';
+
+        return $this->render('index', [
+            'service' => $serviceModel,
+        ]);
     }
 
     /**
@@ -87,8 +98,19 @@ class SiteController extends Controller
      * @return string
      */
     public function actionService()
+
     {
-        return $this->render('service');
+        $serviceModel = Service::find()
+            ->asArray()
+            ->limit(6)
+            ->all();
+
+        /** Page Title */
+        $this->view->title = 'Service';
+
+        return $this->render('service', [
+            'service' => $serviceModel,
+        ]);
     }
 
     /**
